@@ -1,8 +1,10 @@
 ---
+import ChurchMemberDashboard from '$components/ChurchMemberDashboard'
 import LayoutSidebar from '../app/LayoutSidebar.astro'
 import LandingReadme from '../modules/LandingReadme.astro'
 ---
 
 <LayoutSidebar>
   <LandingReadme />
+	<ChurchMemberDashboard client:only="react"/>
 </LayoutSidebar>

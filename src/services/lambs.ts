@@ -10,19 +10,19 @@ export async function getLambs(): Promise<Lamb[]> {
     throw new Error('DOC_URL environment variable is not defined')
   }
 
-  const api = new GristDocAPI(docUrl)
-  const mainRecords: IRecord[] = await api.fetchTable('LambInfo_Main')
-  const groupRecords: IRecord[] = await api.fetchTable('GroupCare')
-  const gifFromGodRecords: IRecord[] = await api.fetchTable('GiftFromGod')
-  // console.log('gifFromGodRecords', gifFromGodRecords)
-	const gifFromGod: GiftFromGod[] = gifFromGodRecords.map(getGiftFromGod)
-  const groupCare: GroupCare[] = groupRecords.map(mapRecordToGroupCare)
-  let lambs: Lamb[] = mainRecords.map(record =>
-    mapRecordToLamb(record, groupCare)
-  )
-	lambs = assignGifToLamb(lambs, gifFromGod)
+  // const api = new GristDocAPI(docUrl)
+  // const mainRecords: IRecord[] = await api.fetchTable('LambInfo_Main')
+  // const groupRecords: IRecord[] = await api.fetchTable('GroupCare')
+  // const gifFromGodRecords: IRecord[] = await api.fetchTable('GiftFromGod')
+  // // console.log('gifFromGodRecords', gifFromGodRecords)
+	// const gifFromGod: GiftFromGod[] = gifFromGodRecords.map(getGiftFromGod)
+  // const groupCare: GroupCare[] = groupRecords.map(mapRecordToGroupCare)
+  // let lambs: Lamb[] = mainRecords.map(record =>
+  //   mapRecordToLamb(record, groupCare)
+  // )
+	// lambs = assignGifToLamb(lambs, gifFromGod)
 	// console.log('lambs', lambs)
-  return lambs
+  return mockLambs
   // return mockLambsconsole.log('getLambs')
 }
 
